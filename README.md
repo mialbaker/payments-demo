@@ -3,6 +3,8 @@
 ## Steps to Start Project
 
 1. Create a python3 virtual env
+- `python3 -m venv myenv`
+- activate virtual env `source myenv/bin/activate`
 2. Install dependencies with `pip3 install -r requirements.txt`
 3. Have Postgres installed and running, create a database with name/user/password from our `.env` file:
    ```
@@ -13,10 +15,10 @@
 	DB_HOST = localhost
 	DB_PORT = 5432
    ```
-5. Start up server by running `python3 manage.py runserver` in `~./payments-demo` folder
+4. Start up server by running `python3 manage.py runserver` in `~./payments-demo` folder
 - `View server at http://127.0.0.1:8000/`
 5. In `~./payments-demo/client` folder, run `rm package-lock.json` to delete package lock json and allow installation of new dependency versions
-6. Run `npm i` to install dependencies in `~./payments-demo/client` folder
+6. Run `npm install` to install dependencies in `~./payments-demo/client` folder
 7. Start up client by running `npm start` in `~./payments-demo/client` folder
 - `View client at http://127.0.0.1:3000/`
 
