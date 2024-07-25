@@ -16,14 +16,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
-from rest_framework.routers import DefaultRouter
 
-from payments import views
-router = DefaultRouter()
-router.register(r"payments", views.PaymentsViewSet)
 
 urlpatterns = [
-    path('', include('frontend.urls')),
+    path('', include('payments.urls')),
     path('admin/', admin.site.urls),
-    path("api/", include('payments.urls'))
 ]
