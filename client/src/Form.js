@@ -11,12 +11,12 @@ function Form() {
   const [create_employee_type_id, setCreateEmployeeTypeId] = useState("");
 
   // Update state fields
-  const [id, setId] = useState("");
-  const [paytype_id, setPaytypeId] = useState("");
-  const [amount, setAmount] = useState("");
-  const [date, setDate] = useState("");
-  const [provider_id, setProviderId] = useState("");
-  const [employee_type_id, setEmployeeTypeId] = useState("");
+  const [update_id, setUpdateId] = useState("");
+  const [update_paytype_id, setUpdatePaytypeId] = useState("");
+  const [update_amount, setUpdateAmount] = useState("");
+  const [update_date, setUpdateDate] = useState("");
+  const [update_provider_id, setUpdateProviderId] = useState("");
+  const [update_employee_type_id, setUpdateEmployeeTypeId] = useState("");
 
   // Delete state fields
   const [delete_id, setDeleteId] = useState("");
@@ -32,10 +32,10 @@ function Form() {
             create_amount: parseFloat(create_amount),
             create_date: create_date,
             create_provider_id: create_provider_id,
-            create_employee_type_id: parseInt(create_employee_type_id)
+            create_employee_type_id: parseInt(create_employee_type_id),
         }),
       });
-      const resJson = await res.json();
+      // const resJson = await res.json();
       if (res.status - 200 < 100) {
         setCreatePaytypeId("");
         setCreateAmount("");
@@ -43,7 +43,7 @@ function Form() {
         setCreateProviderId("");
         setCreateEmployeeTypeId("");
         alert("Create success!")
-        window.location.reload();
+        // window.location.reload();
       } else {
         alert("Failed to create");
         console.log(res);
@@ -56,26 +56,26 @@ function Form() {
   const handleEditSubmit = async (e) => {
     e.preventDefault();
     try {
-      let res = await fetch("http://localhost:8000/update/" + id + "/", {
+      let res = await fetch("http://localhost:8000/update/" + update_id + "/", {
         headers : { 'Content-type' : 'application/json', Accept : 'application/json'},
         method: "PUT",
         body: JSON.stringify({
-            id: parseInt(id),
-            paytype_id: paytype_id,
-            amount: amount,
-            date: date,
-            provider_id: provider_id,
-            employee_type_id: employee_type_id,
+            update_id: update_id,
+            update_paytype_id: update_paytype_id,
+            update_amount: update_amount,
+            update_date: update_date,
+            update_provider_id: update_provider_id,
+            update_employee_type_id: update_employee_type_id,
         }),
       });
       const resJson = await res.json();
       if (res.status - 200 < 100) {
-        setId("");
-        setPaytypeId("");
-        setAmount("");
-        setDate("");
-        setProviderId("");
-        setEmployeeTypeId("");
+        setUpdateId("");
+        setUpdatePaytypeId("");
+        setUpdateAmount("");
+        setUpdateDate("");
+        setUpdateProviderId("");
+        setUpdateEmployeeTypeId("");
         alert("Update success!")
         window.location.reload();
       } else {
@@ -111,22 +111,28 @@ function Form() {
   };
   
   return (
-    <div className="App">
+    
+    <div className="form-container">
       <form onSubmit={handleCreateSubmit}>
+        <div class = "titles">
+        <p>
+            Create New Data Entry
+        </p>
+        </div>
         <input
-          type="text"
+          type="number"
           value={create_paytype_id}
           placeholder="Paytype ID"
           onChange={(e) => setCreatePaytypeId(e.target.value)}
         />
         <input
-          type="text"
+          type="number"
           value={create_amount}
           placeholder="Amount"
           onChange={(e) => setCreateAmount(e.target.value)}
         />
         <input
-          type="text"
+          type="datetime-local"
           value={create_date}
           placeholder="Date"
           onChange={(e) => setCreateDate(e.target.value)}
@@ -138,57 +144,71 @@ function Form() {
           onChange={(e) => setCreateProviderId(e.target.value)}
         />
         <input
-          type="text"
+          type="number"
           value={create_employee_type_id}
           placeholder="Employee Type ID"
           onChange={(e) => setCreateEmployeeTypeId(e.target.value)}
         />
+        <div class="button-container">
         <button type="submit" class="btn btn-primary btn-lg active">Create</button>
+        </div>
       </form>
 
       <form onSubmit={handleEditSubmit}>
+      <div class = "titles">
+        <p>
+            Update Existing Data Entry
+        </p>
+        </div>
         <input
-          type="text"
-          value={id}
+          type="number"
+          value={update_id}
           placeholder="ID"
-          onChange={(e) => setId(e.target.value)}
+          onChange={(e) => setUpdateId(e.target.value)}
         />
         <input
-          type="text"
-          value={paytype_id}
+          type="number"
+          value={update_paytype_id}
           placeholder="Paytype ID"
-          onChange={(e) => setPaytypeId(e.target.value)}
+          onChange={(e) => setUpdatePaytypeId(e.target.value)}
         />
         <input
-          type="text"
-          value={amount}
+          type="number"
+          value={update_amount}
           placeholder="Amount"
-          onChange={(e) => setAmount(e.target.value)}
+          onChange={(e) => setUpdateAmount(e.target.value)}
         />
         <input
-          type="text"
-          value={date}
+          type="datetime-local"
+          value={update_date}
           placeholder="Date"
-          onChange={(e) => setDate(e.target.value)}
+          onChange={(e) => setUpdateDate(e.target.value)}
         />
         <input
           type="text"
-          value={provider_id}
+          value={update_provider_id}
           placeholder="Provider ID"
-          onChange={(e) => setProviderId(e.target.value)}
+          onChange={(e) => setUpdateProviderId(e.target.value)}
         />
         <input
-          type="text"
-          value={employee_type_id}
+          type="number"
+          value={update_employee_type_id}
           placeholder="Employee Type ID"
-          onChange={(e) => setEmployeeTypeId(e.target.value)}
+          onChange={(e) => setUpdateEmployeeTypeId(e.target.value)}
         />
-        <button type="submit" class="btn btn-primary btn-lg active">Edit</button>
+        <div id="button-container">
+          <button type="submit" class="btn btn-primary btn-lg active">Edit</button>
+        </div>
       </form>
 
       <form onSubmit={handleDeleteSubmit}>
+      <div class = "titles">
+        <p>
+            Delete Data Entry
+        </p>
+        </div>
         <input
-          type="text"
+          type="number"
           value={delete_id}
           placeholder="ID"
           onChange={(e) => setDeleteId(e.target.value)}

@@ -6,16 +6,3 @@
   display: flex;
   justify-content: space-between;
 }
-
-.btn-secondary {
-  color: #ffffff;
-  background-color: #9c32e2;
-  border-color: #9c32e2;
-  width: 80px;
-  height: 35px; 
-  border-radius: 5px;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
