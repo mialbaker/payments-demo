@@ -35,7 +35,6 @@ function Form() {
             employee_type_id: parseInt(create_employee_type_id),
         }),
       });
-      // const resJson = await res.json();
       if (res.status - 200 < 100) {
         setCreatePaytypeId("");
         setCreateAmount("");
@@ -68,7 +67,6 @@ function Form() {
             employee_type_id: update_employee_type_id,
         }),
       });
-      const resJson = await res.json();
       if (res.status - 200 < 100) {
         setUpdateId("");
         setUpdatePaytypeId("");
