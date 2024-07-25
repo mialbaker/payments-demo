@@ -1,0 +1,38 @@
+.App-header {
+  padding: 0 16px;
+  text-align: center;
+  margin: 30px auto 30px;
+}
+
+.App-main {
+  padding: 0 16px;
+  max-width: 1160px;
+  margin: 30px auto 0;
+}
+
+.App-form {
+  padding: 0 16px;
+  max-width: 1160px;
+  margin: 30px auto 0;
+}
+
+.Edit-Button {
+  padding: 0 16px;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-primary {
+  color: #ffffff;
+  background-color: #9c32e2;
+  border-color: #9c32e2;
+  width: 175px;
+  height: 35px; 
+  border-radius: 5px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

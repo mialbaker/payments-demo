@@ -1,0 +1,21 @@
+.form-container {
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    margin: 10px;
+    align-items: center;
+}
+
+.btn-primary {
+    color: #ffffff;
+    background-color: #9c32e2;
+    border-color: #9c32e2;
+    width: 175px;
+    height: 35px; 
+    border-radius: 5px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
