@@ -59,7 +59,3 @@ Extra Credit:
 	- Documentation can be found here https://alembic.sqlalchemy.org/en/latest/tutorial.html
 
 - All API requests from the front end should be done through the React / Redux Thunk pattern and mapped to the component state from the store
-
-Added basic Django app w/ Postgres database and created migration, model, and serializer for Payments table
-
-
