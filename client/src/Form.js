@@ -28,11 +28,11 @@ function Form() {
         headers : { 'Content-type' : 'application/json', Accept : 'application/json'},
         method: "POST",
         body: JSON.stringify({
-            create_paytype_id: parseInt(create_paytype_id),
-            create_amount: parseFloat(create_amount),
-            create_date: create_date,
-            create_provider_id: create_provider_id,
-            create_employee_type_id: parseInt(create_employee_type_id),
+            paytype_id: parseInt(create_paytype_id),
+            amount: parseFloat(create_amount),
+            date: create_date,
+            provider_id: create_provider_id,
+            employee_type_id: parseInt(create_employee_type_id),
         }),
       });
       // const resJson = await res.json();
@@ -43,7 +43,7 @@ function Form() {
         setCreateProviderId("");
         setCreateEmployeeTypeId("");
         alert("Create success!")
-        // window.location.reload();
+        window.location.reload();
       } else {
         alert("Failed to create");
         console.log(res);
@@ -60,12 +60,12 @@ function Form() {
         headers : { 'Content-type' : 'application/json', Accept : 'application/json'},
         method: "PUT",
         body: JSON.stringify({
-            update_id: update_id,
-            update_paytype_id: update_paytype_id,
-            update_amount: update_amount,
-            update_date: update_date,
-            update_provider_id: update_provider_id,
-            update_employee_type_id: update_employee_type_id,
+            id: update_id,
+            paytype_id: update_paytype_id,
+            amount: update_amount,
+            date: update_date,
+            provider_id: update_provider_id,
+            employee_type_id: update_employee_type_id,
         }),
       });
       const resJson = await res.json();
@@ -197,7 +197,7 @@ function Form() {
           onChange={(e) => setUpdateEmployeeTypeId(e.target.value)}
         />
         <div id="button-container">
-          <button type="submit" class="btn btn-primary btn-lg active">Edit</button>
+          <button type="submit" class="btn btn-primary btn-lg active">Update</button>
         </div>
       </form>
 
