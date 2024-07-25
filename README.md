@@ -4,9 +4,9 @@
 
 1. Run `npm i` to install dependencies
 2. Create a Postgres database named `practice_data` with owner `practice_rw` and password `practice_rw`
-3. Start up server by running `python3 manage.py runserver` in `~./paymentsdemo` folder
+3. Start up server by running `python3 manage.py runserver` in `~./payments-demo` folder
 - `View server at http://127.0.0.1:8000/`
-4. Start up client by running `npm start` in `~./paymentsdemo/client` folder
+4. Start up client by running `npm start` in `~./payments-demo/client` folder
 - `View client at http://127.0.0.1:3000/`
 
 ## Project Requirements:
