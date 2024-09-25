@@ -27,37 +27,3 @@
 
 ## Example server side webpage
 <img width="1440" alt="Screen Shot 2024-07-25 at 1 19 18 PM" src="https://github.com/user-attachments/assets/bc3676b0-dcdd-4280-8d18-e70f8a24dfb5">
-
-## Project Requirements:
-
-- Create requirements.txt file with appropriate pip packages
-
-- Create a basic Django application
-	- Documentation can be found here https://docs.djangoproject.com/en/5.0/intro/
-
-- Create a Postgres database named practice_data with owner practice_rw and password practice_rw
-
-- Connect your Django project to your practice_data database
-
-- Create a migration, model, and serializer for a table names "Payments" with five columns
-	- paytype_id
-	- amount
-	- date
-	- provider_id
-	- employee_type_id
-
-- Create API viewset for Payments using Django Viewsets
-	- Documentation can be found here https://www.django-rest-framework.org/api-guide/viewsets/
-	- API should allow normal CRUD operations for the table payments
-
-
-Extra Credit:
-
-- Create a create frontend page for Payments and request data from your Django view
-
-- Display all payments \ Add option to add new payment with information fields \ Add ability to update existing payment information
-
-- Install and configure Alembic and SQLAlchemy in your Django project
-	- Documentation can be found here https://alembic.sqlalchemy.org/en/latest/tutorial.html
-
-- All API requests from the front end should be done through the React / Redux Thunk pattern and mapped to the component state from the store
